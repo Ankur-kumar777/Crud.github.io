@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic CRUD App</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 180px;
+            text-align: center;
+        }
+
+        ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: skyblue;">
+        <a class="navbar-brand"><strong>Crud App</strong></a>
+    </nav>    
+
+    <div class="container">
+        <h1>Basic CRUD App</h1>
+        <ol>
+            <% data.forEach(item=> { %>
+                <li>
+                    <%= item.name %> <a href="/edit/<%= item.id %>">Edit</a> <a href="/delete/<%= item.id %>">Delete</a>
+                </li>
+            <% }); %>
+        </ol>
+        <form action="/" method="POST">
+            <input type="text" name="name" placeholder="Enter item name">
+            <button type="submit" class="btn btn-primary">Add Item</button>
+        </form>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
